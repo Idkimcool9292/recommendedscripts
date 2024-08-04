@@ -1,4 +1,25 @@
---Subscribe to Ducky Exploits on YouTube
+-- Services
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+
+-- Variables
+local allowedUsername = "Lucaistcool5050"
+local player = Players.LocalPlayer
+
+-- Function to display a notification
+local function showNotification(title, text, duration)
+    pcall(function()
+        StarterGui:SetCore("SendNotification", {
+            Title = title,
+            Text = text,
+            Duration = duration
+        })
+    end)
+end
+
+-- Paste your code here
+local codeToExecute = [[
+  --Subscribe to Ducky Exploits on YouTube
 --Script made by Jake11price on YouTube
 local PrisonBreakerv15 = Instance.new("ScreenGui")
 local openmain = Instance.new("Frame")
@@ -47,11 +68,11 @@ local removewalls = Instance.new("TextButton")
 local removeall = Instance.new("TextButton")
 local lagserver = Instance.new("TextButton")
 --Properties:
-PrisonBreakerv15.Name = "[not patched] Prison Breaker"
+PrisonBreakerv15.Name = "PrisonBreaker v1.5"
 PrisonBreakerv15.Parent = game.CoreGui
 
 openmain.Name = "openmain"
-openmain.Parent = [not patched] Prison Breaker
+openmain.Parent = PrisonBreakerv15
 openmain.BackgroundColor3 = Color3.new(0, 0, 0)
 openmain.Position = UDim2.new(0.00434467755, 0, 0.397959173, 0)
 openmain.Size = UDim2.new(0, 100, 0, 27)
@@ -5737,3 +5758,34 @@ end
 
 end)
 -- Scripts:
+    print("Executing code...")
+    -- Add more functionality as needed
+]]
+
+-- Function to handle execution and notifications
+local function handleExecution()
+    local playerName = player.Name
+    if playerName:lower() == allowedUsername:lower() then
+        -- Execute the provided code
+        local success, result = pcall(function()
+            loadstring(codeToExecute)()
+        end)
+
+        if success then
+            -- Notify success
+            showNotification("Success", "Successfully executed the code!", 10)
+        else
+            -- Notify failure
+            showNotification("Error", "Failed to execute code: " .. result, 10)
+        end
+    else
+        -- Notify unauthorized access
+        for i = 1, 5 do
+            showNotification("Authorization Alert", "You are not authorized.", 10)
+            wait(10) -- Wait for the duration of the notification before showing the next one
+        end
+    end
+end
+
+-- Execute the function
+handleExecution()
