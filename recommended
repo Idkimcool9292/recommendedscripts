@@ -68,11 +68,11 @@ local removewalls = Instance.new("TextButton")
 local removeall = Instance.new("TextButton")
 local lagserver = Instance.new("TextButton")
 --Properties:
-PrisonBreakerv15.Name = "PrisonBreaker v1.5"
+PrisonBreakerv15.Name = "LyPrisonBreaker"
 PrisonBreakerv15.Parent = game.CoreGui
 
 openmain.Name = "openmain"
-openmain.Parent = PrisonBreakerv15
+openmain.Parent = LyPrisonBreaker
 openmain.BackgroundColor3 = Color3.new(0, 0, 0)
 openmain.Position = UDim2.new(0.00434467755, 0, 0.397959173, 0)
 openmain.Size = UDim2.new(0, 100, 0, 27)
@@ -94,7 +94,7 @@ main.Visible = true
 end)
 
 main.Name = "main"
-main.Parent = PrisonBreakerv15
+main.Parent = LyPrisonBreaker
 main.BackgroundColor3 = Color3.new(0, 1, 0)
 main.Position = UDim2.new(0.00441803597, 0, 0.249908596, 0)
 main.Size = UDim2.new(0, 383, 0, 586)
